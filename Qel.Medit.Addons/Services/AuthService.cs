@@ -2,7 +2,7 @@ using BC = BCrypt.Net.BCrypt;
 using Microsoft.Extensions.Logging;
 using Qel.Medit.Dal;
 
-namespace Qel.Health.Meditation.ApplicationService.Services;
+namespace Qel.Medit.Addons.Services;
 
 public class AuthService
 {

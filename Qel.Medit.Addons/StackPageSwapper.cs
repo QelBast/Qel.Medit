@@ -1,4 +1,6 @@
-﻿namespace Qel.Medit.Addons;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+
+namespace Qel.Medit.Addons;
 
 public static class StackPageSwapper
 {
@@ -16,11 +18,21 @@ public static class StackPageSwapper
         }
         else if (pages.Count() == 1)
         {
-            await navigation.PushAsync(pages.FirstOrDefault());
+            for (var i = 0; i < navigation.NavigationStack.Count; i++)
+            {
+                if (navigation.NavigationStack[i].GetType() == typeof(T))
+                {
+                    var temp = navigation.NavigationStack[i];
+                    navigation.RemovePage(navigation.NavigationStack[i]);
+                    await navigation.PushAsync(temp, true);
+                    break;
+                }
+            }
         }
         else if (!pages.Any())
         {
-            navigation.InsertPageBefore(new T(), currentPage);
+            await navigation.PushAsync(new T());
         }
     }
+
 }

@@ -69,6 +69,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\Common\Qel.Medit.Common\Qel.Medit.Common.csproj" />
+	  <ProjectReference Include="..\Dal\Qel.Medit.Dal\Qel.Medit.Dal.csproj" />
 	  <ProjectReference Include="..\Qel.Medit.Addons\Qel.Medit.Addons.csproj" />
 	</ItemGroup>
 

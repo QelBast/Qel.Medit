@@ -3,10 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Qel.Medit.ApplicationService.TimerPage"
              Title="TimerPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <StackLayout>
+        <ScrollView>
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+                <Button x:Name="pauseButton" Text="Pause" BackgroundColor="Black" TextColor="White" FontAttributes="Bold" IsEnabled="False" IsVisible="False" Clicked="OnPauseClicked"/>
+
+                <!-- "Stop" Button -->
+                <Button x:Name="stopButton" Text="Stop" BackgroundColor="Black" TextColor="White" FontAttributes="Bold" IsEnabled="False" IsVisible="False" Clicked="OnStopClicked"/>
+                <Label Text="Welcome to the Digital Zen Garden" FontSize="Large" TextColor="White" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0"/>
+                <Label Text="Select Your Meditation Time" FontSize="Medium" TextColor="White" HorizontalOptions="CenterAndExpand" Margin="0,10,0,0"/>
+
+                <!-- Explicit buttons for meditation duration -->
+                <!-- Explicit buttons for meditation duration -->
+                <Button x:Name="btn5min" Text="5 min" BackgroundColor="Black" TextColor="White" FontAttributes="Bold" Clicked="OnMeditationDurationClicked" Margin="0,10,0,10"/>
+                <Button x:Name="btn10min" Text="10 min" BackgroundColor="Black" TextColor="White" FontAttributes="Bold" Clicked="OnMeditationDurationClicked" Margin="0,10,0,10"/>
+                <Button x:Name="btn15min" Text="15 min" BackgroundColor="Black" TextColor="White" FontAttributes="Bold" Clicked="OnMeditationDurationClicked" Margin="0,10,0,10"/>
+                <Button x:Name="btnCustom" Text="Custom" BackgroundColor="Black" TextColor="White" FontAttributes="Bold" Clicked="OnMeditationDurationClicked" Margin="0,10,0,10"/>
+
+                <!-- Label to display meditation status -->
+                <Label x:Name="statusLabel" Text="" FontSize="Medium" TextColor="White" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0"/>
+
+                <!-- Countdown label -->
+                <Label x:Name="countdownLabel" Text="" FontSize="Large" TextColor="White" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0"/>
+            </StackLayout>
+        </ScrollView>
+        <HorizontalStackLayout VerticalOptions="EndAndExpand" Spacing="570">
+            <ImageButton Source="nav_button_timer.png"
+                Clicked="OnTimerNavClicked"
+                HorizontalOptions="Start"
+                VerticalOptions="End"
+                MaximumWidthRequest="100"
+                MinimumWidthRequest="50"/>
+            <ImageButton Source="nav_button_home.png"
+                Clicked="OnHomeNavClicked"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                MaximumWidthRequest="100"
+                MinimumWidthRequest="50"/>
+            <ImageButton Source="nav_button_profile.png"
+                Clicked="OnProfileNavClicked"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                MaximumWidthRequest="100"
+                MinimumWidthRequest="50"/>
+        </HorizontalStackLayout>
+    </StackLayout>
 </ContentPage>

@@ -1,4 +1,4 @@
-using Qel.Health.Meditation.ApplicationService.Services;
+using Qel.Medit.Addons.Services;
 using Qel.Medit.Dal;
 
 namespace Qel.Medit.ApplicationService;
@@ -19,17 +19,21 @@ public partial class LoginPage : ContentPage
         DisplayAlert("Success", "Registration successful", "OK");
     }
 
-    private void LoginButton_Clicked(object sender, EventArgs e)
+    private async void LoginButton_Clicked(object sender, EventArgs e)
     {
         bool isAuthenticated = _authService.ValidateUserCredentials(UsernameEntry.Text, PasswordEntry.Text);
 
         if (isAuthenticated)
         {
-            DisplayAlert("Success", "Login successful", "OK");
+            var result = new TaskCompletionSource(DisplayAlert("Success", "Login successful", "OK"));
+            if(result.TrySetResult())
+            {
+                Navigation.RemovePage(this);
+            }
         }
         else
         {
-            DisplayAlert("Error", "Invalid credentials", "OK");
+            await DisplayAlert("Error", "Invalid credentials", "OK");
         }
     }
 }
