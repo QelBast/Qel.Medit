@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qel.Medit.ApplicationService", "Qel.Medit.ApplicationService\Qel.Medit.ApplicationService.csproj", "{E7859107-E627-4281-9F14-5F1C4A3579DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{CEB38D6E-3B25-4BE6-B8CC-7B53A529FF70}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dal", "Dal", "{3840A604-532C-4509-AD9D-E14433DE93EC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qel.Medit.Common", "Common\Qel.Medit.Common\Qel.Medit.Common.csproj", "{71448869-CC5E-4234-B9F6-F794980B9365}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qel.Medit.Dal", "Dal\Qel.Medit.Dal\Qel.Medit.Dal.csproj", "{BE14D69F-D6E1-4A8B-A819-4300F331639D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qel.Medit.Addons", "Qel.Medit.Addons\Qel.Medit.Addons.csproj", "{EDF38C29-9EC1-4701-941E-D02B7836B88F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7859107-E627-4281-9F14-5F1C4A3579DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7859107-E627-4281-9F14-5F1C4A3579DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7859107-E627-4281-9F14-5F1C4A3579DC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E7859107-E627-4281-9F14-5F1C4A3579DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7859107-E627-4281-9F14-5F1C4A3579DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7859107-E627-4281-9F14-5F1C4A3579DC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{71448869-CC5E-4234-B9F6-F794980B9365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71448869-CC5E-4234-B9F6-F794980B9365}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71448869-CC5E-4234-B9F6-F794980B9365}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71448869-CC5E-4234-B9F6-F794980B9365}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE14D69F-D6E1-4A8B-A819-4300F331639D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE14D69F-D6E1-4A8B-A819-4300F331639D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE14D69F-D6E1-4A8B-A819-4300F331639D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE14D69F-D6E1-4A8B-A819-4300F331639D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDF38C29-9EC1-4701-941E-D02B7836B88F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF38C29-9EC1-4701-941E-D02B7836B88F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDF38C29-9EC1-4701-941E-D02B7836B88F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDF38C29-9EC1-4701-941E-D02B7836B88F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{71448869-CC5E-4234-B9F6-F794980B9365} = {CEB38D6E-3B25-4BE6-B8CC-7B53A529FF70}
+		{BE14D69F-D6E1-4A8B-A819-4300F331639D} = {3840A604-532C-4509-AD9D-E14433DE93EC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D4CDC74-79C9-4A6E-86E0-4E8AEC3C23F1}
+	EndGlobalSection
+EndGlobal
