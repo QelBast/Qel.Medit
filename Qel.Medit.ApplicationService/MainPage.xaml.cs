@@ -1,5 +1,7 @@
 ﻿//using Android.Media;
 
+using System.Linq;
+
 namespace Qel.Medit.ApplicationService;
 
 public partial class MainPage : ContentPage
@@ -164,9 +166,27 @@ public partial class MainPage : ContentPage
         stopButton.IsVisible = false;
     }
 
-    private void OnTimerNavClicked(object sender, EventArgs e)
+    private async void OnTimerNavClicked(object sender, EventArgs e)
     {
-        
+        var pages = Navigation.NavigationStack.OfType<TimerPage>();
+        if (pages.Count() > 1)
+        {
+            Console.WriteLine("Больше одной страницы");
+
+            foreach (var item in pages)
+            {
+                Navigation.RemovePage(item);
+            }
+        }
+        else if(pages.Count() == 1)
+        {
+            await Navigation.PushAsync(pages.FirstOrDefault());
+        }
+        else if(!pages.Any())
+        {
+            Navigation.InsertPageBefore(new TimerPage(), this);
+            
+        }
     }
 
     private void OnHomeNavClicked(object sender, EventArgs e)
