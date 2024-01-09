@@ -163,4 +163,19 @@ public partial class MainPage : ContentPage
         stopButton.IsEnabled = false;
         stopButton.IsVisible = false;
     }
+
+    private void OnTimerNavClicked(object sender, EventArgs e)
+    {
+        
+    }
+
+    private void OnHomeNavClicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void OnProfileNavClicked(object sender, EventArgs e)
+    {
+
+    }
 }

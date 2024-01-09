@@ -11,7 +11,6 @@ public partial class LoginPage : ContentPage
     {
         InitializeComponent();
         _authService = new AuthService(DbContextMain.CreateContext());
-
     }
 
     private void RegisterButton_Clicked(object sender, EventArgs e)
