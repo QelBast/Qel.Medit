@@ -24,7 +24,7 @@ public partial class MainPage : ContentPage
 
     private async void OnTimerNavClicked(object sender, EventArgs e)
     {
-        await Navigation.PageSwap<TimerPage>(this);
+        await Navigation.PageSwap<TimerPage>();
     }
 
     private void OnHomeNavClicked(object sender, EventArgs e)
@@ -34,6 +34,6 @@ public partial class MainPage : ContentPage
 
     private async void OnProfileNavClicked(object sender, EventArgs e)
     {
-        await Navigation.PageSwap<ProfilePage>(this);
+        await Navigation.PageSwap<ProfilePage>();
     }
 }

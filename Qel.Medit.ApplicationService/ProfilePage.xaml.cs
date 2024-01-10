@@ -16,12 +16,12 @@ public partial class ProfilePage : ContentPage
 
     private async void OnTimerNavClicked(object sender, EventArgs e)
     {
-        await Navigation.PageSwap<TimerPage>(this);
+        await Navigation.PageSwap<TimerPage>();
     }
 
     private async void OnHomeNavClicked(object sender, EventArgs e)
     {
-        await Navigation.PageSwap<MainPage>(this);
+        await Navigation.PageSwap<MainPage>();
     }
 
     private void OnProfileNavClicked(object sender, EventArgs e)

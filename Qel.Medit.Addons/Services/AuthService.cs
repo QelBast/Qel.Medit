@@ -4,14 +4,9 @@ using Qel.Medit.Dal;
 
 namespace Qel.Medit.Addons.Services;
 
-public class AuthService
+public class AuthService(DbContextMain dbContext)
 {
-    private readonly DbContextMain _dbContext;
-
-    public AuthService(DbContextMain dbContext)
-    {
-        _dbContext = dbContext;
-    }
+    private readonly DbContextMain _dbContext = dbContext;
 
     public void RegisterUser(string userName, string password)
     {
@@ -19,22 +14,15 @@ public class AuthService
         string hashedPassword = BC.HashPassword(password);
 
         // Add the user to the database
-        _dbContext.Users.Add(new Medit.Dal.Entities.User 
+        _dbContext.Users.Add(new Dal.Entities.User 
         { 
+            Id = Guid.NewGuid(),
             UserName = userName,
             PasswordHash = hashedPassword
         });
         _dbContext.SaveChanges();
     }
 
-    // Hash password using a secure hashing algorithm (e.g., BCrypt)
-    private string HashPassword(string password)
-    {
-        // Implement password hashing logic here
-        // Use a library like BCrypt.Net for secure password hashing
-        // Example: BCrypt.Net.BCrypt.HashPassword(password)
-        throw new NotImplementedException();
-    }
     public bool ValidateUserCredentials(string userName, string password)
     {
 
@@ -49,7 +37,7 @@ public class AuthService
         return false;
     }
 
-    private bool ValidatePassword(string password, string hashedPassword)
+    private static bool ValidatePassword(string password, string hashedPassword)
     {
         // Implement password validation logic here
         return BC.Verify(password, hashedPassword);

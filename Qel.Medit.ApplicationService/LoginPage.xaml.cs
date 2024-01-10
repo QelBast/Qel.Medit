@@ -28,7 +28,7 @@ public partial class LoginPage : ContentPage
             var result = new TaskCompletionSource(DisplayAlert("Success", "Login successful", "OK"));
             if(result.TrySetResult())
             {
-                Navigation.RemovePage(this);
+                await Navigation.PopModalAsync();
             }
         }
         else

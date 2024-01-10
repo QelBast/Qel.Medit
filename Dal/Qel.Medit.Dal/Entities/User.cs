@@ -8,7 +8,7 @@ namespace Qel.Medit.Dal.Entities;
 public class User : BaseGuidEntity, ICreateAndModifyProperties, ISoftDelete
 {
     /// <summary>
-    ///  Возвращает или задаёт связи между гранями
+    ///  Возвращает или задаёт логин пользователя
     /// </summary>
     public required string UserName { get; set; }
 
@@ -16,21 +16,6 @@ public class User : BaseGuidEntity, ICreateAndModifyProperties, ISoftDelete
     /// Возвращает или задаёт текст, по которому составлялась схема
     /// </summary>
     public required string PasswordHash { get; set; }
-
-    /// <summary>
-    /// Возвращает или задаёт цвет связей 
-    /// </summary>
-    public string? EdgesColor { get; set; }
-
-    /// <summary>
-    /// Возвращает или задаёт цвет узлов
-    /// </summary>
-    public string? NodesColor { get; set; }
-
-    /// <summary>
-    /// Возвращает или задаёт флаг, обозначающий направленность связей
-    /// </summary>
-    public bool IsDirected { get; set; }
 
     ///<inheritdoc/>
     public DateTime? CreationDateTime { get; set; }

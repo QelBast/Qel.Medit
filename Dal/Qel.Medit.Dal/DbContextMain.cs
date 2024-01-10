@@ -42,7 +42,7 @@ public class DbContextMain(DbContextOptions<DbContextMain> options) : BaseDbCont
         var connectionString = config.GetConnectionString(nameof(DbContextMain));
         return new DbContextMain(new DbContextOptionsBuilder<DbContextMain>()
             .LogTo(m => System.Diagnostics.Debug.WriteLine(m))
-            .EnableSensitiveDataLogging()
+            //.EnableSensitiveDataLogging()
             .UseNpgsql(connectionString).Options);
     }
 }
