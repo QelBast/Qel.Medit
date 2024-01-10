@@ -2,35 +2,24 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Qel.Medit.ApplicationService.MainPage"
-             BackgroundColor="DarkSlateGray">
+             x:Class="Qel.Medit.ApplicationService.MainPage">
 
-    <StackLayout>
-        <ScrollView>
-            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                <toolkit:MediaElement Source="embed://audio.mp3"
-                ShouldShowPlaybackControls="True" />
-            </StackLayout>
-        </ScrollView>
-        <HorizontalStackLayout VerticalOptions="EndAndExpand" Spacing="570">
-            <ImageButton Source="nav_button_timer.png"
-             Clicked="OnTimerNavClicked"
-             HorizontalOptions="Start"
-             VerticalOptions="End"
-             MaximumWidthRequest="100"
-             MinimumWidthRequest="50"/>
-            <ImageButton Source="nav_button_home.png"
-             Clicked="OnHomeNavClicked"
-             HorizontalOptions="Center"
-             VerticalOptions="End"
-             MaximumWidthRequest="100"
-             MinimumWidthRequest="50"/>
-            <ImageButton Source="nav_button_profile.png"
-             Clicked="OnProfileNavClicked"
-             HorizontalOptions="End"
-             VerticalOptions="End"
-             MaximumWidthRequest="100"
-             MinimumWidthRequest="50"/>
-        </HorizontalStackLayout>
+    <StackLayout Orientation="Vertical">
+        <toolkit:MediaElement Source="embed://audio.mp3"
+        ShouldShowPlaybackControls="True" VerticalOptions="FillAndExpand"/>
+        <Grid RowDefinitions="Auto, *" ColumnDefinitions="*, *, *" VerticalOptions="EndAndExpand">
+            <ImageButton Grid.Row="0" Grid.Column="0" Source="nav_button_timer.png"
+                Clicked="OnTimerNavClicked"
+                MaximumWidthRequest="100"
+                MinimumWidthRequest="50"/>
+            <ImageButton Grid.Row="0" Grid.Column="1" Source="nav_button_home.png"
+                Clicked="OnHomeNavClicked"
+                MaximumWidthRequest="100"
+                MinimumWidthRequest="50"/>
+            <ImageButton Grid.Row="0" Grid.Column="2" Source="nav_button_profile.png"
+                Clicked="OnProfileNavClicked"
+                MaximumWidthRequest="100"
+                MinimumWidthRequest="50"/>
+        </Grid>
     </StackLayout>
 </ContentPage>

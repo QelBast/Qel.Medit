@@ -28,25 +28,19 @@
                 <Label x:Name="countdownLabel" Text="" FontSize="Large" TextColor="White" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0"/>
             </StackLayout>
         </ScrollView>
-        <HorizontalStackLayout VerticalOptions="EndAndExpand" Spacing="570">
-            <ImageButton Source="nav_button_timer.png"
-                Clicked="OnTimerNavClicked"
-                HorizontalOptions="Start"
-                VerticalOptions="End"
-                MaximumWidthRequest="100"
-                MinimumWidthRequest="50"/>
-            <ImageButton Source="nav_button_home.png"
-                Clicked="OnHomeNavClicked"
-                HorizontalOptions="Center"
-                VerticalOptions="End"
-                MaximumWidthRequest="100"
-                MinimumWidthRequest="50"/>
-            <ImageButton Source="nav_button_profile.png"
-                Clicked="OnProfileNavClicked"
-                HorizontalOptions="End"
-                VerticalOptions="End"
-                MaximumWidthRequest="100"
-                MinimumWidthRequest="50"/>
-        </HorizontalStackLayout>
+        <Grid RowDefinitions="Auto, *" ColumnDefinitions="*, *, *" VerticalOptions="EndAndExpand">
+            <ImageButton Grid.Row="0" Grid.Column="0" Source="nav_button_timer.png"
+        Clicked="OnTimerNavClicked"
+        MaximumWidthRequest="100"
+        MinimumWidthRequest="50"/>
+            <ImageButton Grid.Row="0" Grid.Column="1" Source="nav_button_home.png"
+        Clicked="OnHomeNavClicked"
+        MaximumWidthRequest="100"
+        MinimumWidthRequest="50"/>
+            <ImageButton Grid.Row="0" Grid.Column="2" Source="nav_button_profile.png"
+        Clicked="OnProfileNavClicked"
+        MaximumWidthRequest="100"
+        MinimumWidthRequest="50"/>
+        </Grid>
     </StackLayout>
 </ContentPage>

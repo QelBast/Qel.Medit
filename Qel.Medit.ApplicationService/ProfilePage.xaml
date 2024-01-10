@@ -3,31 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Qel.Medit.ApplicationService.ProfilePage"
              Title="ProfilePage">
-    <VerticalStackLayout>
+    <StackLayout>
         <ScrollView>
             <VerticalStackLayout>
                 <Button Text="Авторизация" Clicked="ToAuthorizationModalStack" />
             </VerticalStackLayout>
         </ScrollView>
-        <HorizontalStackLayout VerticalOptions="EndAndExpand" Spacing="570">
-            <ImageButton Source="nav_button_timer.png"
+        <Grid RowDefinitions="Auto, *" ColumnDefinitions="*, *, *" VerticalOptions="EndAndExpand">
+            <ImageButton Grid.Row="0" Grid.Column="0" Source="nav_button_timer.png"
         Clicked="OnTimerNavClicked"
-        HorizontalOptions="Start"
-        VerticalOptions="End"
         MaximumWidthRequest="100"
         MinimumWidthRequest="50"/>
-            <ImageButton Source="nav_button_home.png"
+            <ImageButton Grid.Row="0" Grid.Column="1" Source="nav_button_home.png"
         Clicked="OnHomeNavClicked"
-        HorizontalOptions="Center"
-        VerticalOptions="End"
         MaximumWidthRequest="100"
         MinimumWidthRequest="50"/>
-            <ImageButton Source="nav_button_profile.png"
+            <ImageButton Grid.Row="0" Grid.Column="2" Source="nav_button_profile.png"
         Clicked="OnProfileNavClicked"
-        HorizontalOptions="End"
-        VerticalOptions="End"
         MaximumWidthRequest="100"
         MinimumWidthRequest="50"/>
-        </HorizontalStackLayout>
-    </VerticalStackLayout>
+        </Grid>
+    </StackLayout>
 </ContentPage>
